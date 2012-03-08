@@ -6,9 +6,9 @@
         <artifactId>unitas</artifactId>
         <version>0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>unitas-common</artifactId>
+    <artifactId>unitas-dirac</artifactId>
     <packaging>jar</packaging>
-    <name>unitas - common</name>
+    <name>unitas - dirac</name>
     <dependencies>
         <dependency>
             <groupId>commons-configuration</groupId>
@@ -16,15 +16,15 @@
         </dependency> 
         <dependency>                
             <groupId>fr.cnrs.i3s</groupId>
-            <artifactId>grool-common</artifactId>
+            <artifactId>jgasw-core</artifactId>
         </dependency>
-        <dependency>                
-                <groupId>fr.cnrs.i3s</groupId>
-                <artifactId>jgasw-core</artifactId>
-            </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>unitas-common</artifactId>
         </dependency>
         <!-- test dependencies -->
         <dependency>

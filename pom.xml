@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>unitas</groupId>
+    <artifactId>unitas</artifactId>    
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>unitas</name>
+    <description>UNIversal TAsk Submission back-end</description>
+    <inceptionYear>2012</inceptionYear>
+    <licenses>
+        <license>
+            <name>CeCILL-B, Version 1.0</name>
+            <url>http://www.cecill.info/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <organization>        
+        <name>MODALIS Team - I3S Laboratory</name>
+        <url>http://modalis.i3s.unice.fr/</url>
+    </organization>
+    <developers>        
+        <developer>
+            <id>javier</id>
+            <name>Javier ROJAS BALDERRAMA</name>
+            <email>javier@i3s.unice.fr</email>
+            <url>http://www.i3s.unice.fr/~javier/</url>
+            <organization>Centre National de la Recherche Scientifique</organization>
+            <organizationUrl>http://www.cnrs.fr/</organizationUrl>
+            <timezone>1</timezone>
+        </developer>
+        <developer>
+            <id>tram</id>
+            <name>Tram TRUONG HUU</name>
+            <email>tram@polytech.unice.fr</email>
+            <url>http://modalis.i3s.unice.fr/~tram/</url>
+            <organization>Centre National de la Recherche Scientifique</organization>
+            <organizationUrl>http://www.cnrs.fr/</organizationUrl>
+            <timezone>1</timezone>
+        </developer>
+    </developers>
+    <modules>
+        <module>common</module>        
+        <module>dirac</module>
+<!--        <module>proxy-cli</module>
+        <module>transfer</module>
+        <module>grid</module>
+        <module>transfer-cli</module>-->
+    </modules>        
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- versions of dependency packages-->                
+<!--        <cog-jglobus.version>1.4</cog-jglobus.version>
+-->        
+        <configuration.version>1.7</configuration.version>
+        <hamcrest.version>1.3.RC2</hamcrest.version>  
+        <grool.version>0.3.4</grool.version>
+        <jigsaw.version>SNAPSHOT</jigsaw.version>
+        <junit.version>4.8.2</junit.version>
+        <log4j.version>1.2.16</log4j.version>
+        <logging.version>1.1.1</logging.version>    <!--
+        <security.voms.version>1.9.19-3</security.voms.version>
+        <vlet.version>1.4.1</vlet.version>        -->
+    </properties>    
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>MODALIS Releases Repository [modalis-releases]</name>
+            <url>http://nyx.unice.fr:9007/nexus/content/repositories/releases</url>            
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>MODALIS Snapshot Repository [modalis-snapshot]</name>
+            <url>http://nyx.unice.fr:9007/nexus/content/repositories/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <connection>scm:svn:https://nyx.unice.fr/svn/grool/trunk</connection>
+        <developerConnection>scm:svn:https://nyx.unice.fr/svn/grool/trunk</developerConnection>
+        <url>https://nyx.unice.fr/svn/grool</url>
+    </scm>
+    <repositories>
+        <repository>
+            <id>ibiblio</id>
+            <name>Ibiblio Repository</name>
+            <url>http://ibiblio.org/maven</url>
+<!--            <layout>legacy</layout>-->
+        </repository>
+        <repository>
+            <id>apache</id>
+            <name>Apache Repository</name>
+            <url>http://www.apache.org/dist/java-repository</url>
+<!--            <layout>legacy</layout>-->
+        </repository>
+        <repository>
+            <id>apache-rsync</id>
+            <name>Apache Ibiblio-rsync Repository</name>
+            <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+            </releases>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshots Repository</name>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+            <snapshots>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>thirdparty</id>
+            <name>MODALIS third-party repository [modalis-thirdparty]</name>
+            <url>http://nyx.unice.fr:9007/nexus/content/repositories/thirdparty</url>    
+        </repository>
+        <repository>
+            <id>releases</id>
+            <name>MODALIS repository [modalis-release]</name>
+            <url>http://nyx.unice.fr:9007/nexus/content/repositories/releases</url>    
+        </repository>
+        <repository>
+            <id>metro</id>
+            <name>Metro Repository</name>
+            <url>http://download.java.net/maven/2</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <name>Sonatype Respository</name>
+            <url>http://oss.sonatype.org/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>       
+        <repository>
+            <id>cc-in2p3</id>
+            <name>CC-IN2P3 Repository</name>
+            <url>http://grid.in2p3.fr/maven2</url>
+        </repository>        
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>apache</id>
+            <name>Apache Repository for Plugins</name>
+            <url>http://people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+            </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshots Repository for Plugins</name>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+            <snapshots>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>                     
+    </pluginRepositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagBase>https://nyx.unice.fr/svn/grool/tags</tagBase>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <configuration>
+                    <connectionType>developerconnection</connectionType>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <parallel>classes</parallel>
+<!--                    <parallel>methods</parallel>-->
+                    <threadCount>5</threadCount>
+                    <perCoreThreadCount>true</perCoreThreadCount>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.2.2</version>
+                </plugin>                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.12</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>    
+    <dependencyManagement>
+        <dependencies>
+           <dependency>
+                <groupId>fr.cnrs.i3s</groupId>
+                <artifactId>grool-common</artifactId>
+                <version>${grool.version}</version>
+            </dependency>
+                <dependency>
+                <groupId>fr.cnrs.i3s</groupId>
+                <artifactId>grool-proxy</artifactId>
+                <version>${grool.version}</version>
+            </dependency>
+         
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>unitas-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <dependency>                
+                <groupId>commons-configuration</groupId>
+                <artifactId>commons-configuration</artifactId>
+                <version>${configuration.version}</version>
+            </dependency>
+            <dependency>                
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${logging.version}</version>
+            </dependency>            
+            <dependency> 
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-integration</artifactId>
+                <version>${hamcrest.version}</version>                 
+            </dependency>            
+            <dependency>                
+                <groupId>fr.cnrs.i3s</groupId>
+                <artifactId>jgasw-core</artifactId>
+                <version>${jigsaw.version}</version>                           
+            </dependency>
+            <dependency>                
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>                           
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+<!--            <dependency>
+                <groupId>org.glite</groupId>
+                <artifactId>security-voms</artifactId>
+                <version>${security.voms.version}</version>
+            </dependency>
+            <dependency> 
+                  dependency for myproxy 
+                <groupId>org.globus</groupId>
+                <artifactId>cog-jglobus</artifactId>
+                <version>${cog-jglobus.version}</version>
+            </dependency>            
+            <dependency>
+                 dependency Vlet 
+                <groupId>vlet</groupId>
+                <artifactId>vrs-core</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>            
+            
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>security-delegation</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>wms-wmproxy</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>jdl</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>security-trustmanager</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>
+            <dependency>
+                 TO CHANGE 
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>classad</artifactId>
+                <version>${vlet.version}</version>
+                 see condor:classad 
+            </dependency>
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>security-util</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>service-discovery</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>
+            <dependency>
+                 extra dependency Vlet 
+                <groupId>vlet.wms</groupId>
+                <artifactId>lb</artifactId>
+                <version>${vlet.version}</version>
+            </dependency>-->
+        </dependencies>
+    </dependencyManagement>   
+</project>
