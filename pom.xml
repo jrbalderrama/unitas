@@ -42,10 +42,7 @@
     <modules>
         <module>common</module>        
         <module>dirac</module>
-<!--        <module>proxy-cli</module>
         <module>transfer</module>
-        <module>grid</module>
-        <module>transfer-cli</module>-->
     </modules>        
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,14 +50,17 @@
 <!--        <cog-jglobus.version>1.4</cog-jglobus.version>
 -->        
         <configuration.version>1.7</configuration.version>
-        <hamcrest.version>1.3.RC2</hamcrest.version>  
         <grool.version>0.3.4</grool.version>
-        <jigsaw.version>SNAPSHOT</jigsaw.version>
+        <hamcrest.version>1.3.RC2</hamcrest.version>
+        <httpclient.version>3.1</httpclient.version>
+        <io.version>2.0.1</io.version>
         <junit.version>4.8.2</junit.version>
         <log4j.version>1.2.16</log4j.version>
-        <logging.version>1.1.1</logging.version>    <!--
-        <security.voms.version>1.9.19-3</security.voms.version>
-        <vlet.version>1.4.1</vlet.version>        -->
+        <logging.version>1.1.1</logging.version>  
+        <net.version>2.0</net.version>
+<!--        <security.voms.version>1.9.19-3</security.voms.version>-->
+        <vfs.version>1.0</vfs.version>
+<!--        <vlet.version>1.4.1</vlet.version>       -->
     </properties>    
     <distributionManagement>
         <repository>
@@ -231,17 +231,46 @@
     </build>    
     <dependencyManagement>
         <dependencies>
-           <dependency>
+             <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${io.version}</version>
+            </dependency>
+             <dependency>
+                <groupId>commons-vfs</groupId>
+                <artifactId>commons-vfs</artifactId>
+                <version>${vfs.version}</version>
+            </dependency>
+             <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${net.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>fr.cnrs.i3s</groupId>
                 <artifactId>grool-common</artifactId>
                 <version>${grool.version}</version>
             </dependency>
-                <dependency>
+            <dependency>
                 <groupId>fr.cnrs.i3s</groupId>
                 <artifactId>grool-proxy</artifactId>
                 <version>${grool.version}</version>
             </dependency>
-         
+            <dependency>
+                <groupId>fr.cnrs.i3s</groupId>
+                <artifactId>grool-vlet</artifactId>  
+                <version>${grool.version}</version>
+            </dependency> 
+            <dependency>
+                <groupId>fr.cnrs.i3s</groupId>
+                <artifactId>grool-transfer-cli</artifactId> 
+                <version>${grool.version}</version>
+            </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>unitas-common</artifactId>
@@ -263,11 +292,6 @@
                 <artifactId>hamcrest-integration</artifactId>
                 <version>${hamcrest.version}</version>                 
             </dependency>            
-            <dependency>                
-                <groupId>fr.cnrs.i3s</groupId>
-                <artifactId>jgasw-core</artifactId>
-                <version>${jigsaw.version}</version>                           
-            </dependency>
             <dependency>                
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
