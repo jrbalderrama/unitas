@@ -15,12 +15,16 @@ import org.apache.log4j.Logger;
 public class UnitasConfiguration {
     private static final Logger log = Logger.getLogger(UnitasConfiguration.class);
     private static final String META_CONF = "/META-INF/unitas-config.xml";
-    private static final String UNITAS_HOME = "UNITAS_HOME";
+    public static final String UNITAS_HOME = "UNITAS_HOME";
     private static final String UNITAS_PROPERTIES = "UNITAS_PROPERTIES";
     private static final String unitasrc = ".unitasrc";
     private static volatile UnitasConfiguration unitasConfiguration;
     private CompositeConfiguration configuration;
 
+    static String getUnitasHomeDir(){
+        return System.getenv(UNITAS_HOME);
+    }
+    
     static Configuration getConfiguration() {
 
         UnitasConfiguration _configuration = unitasConfiguration;
@@ -74,7 +78,7 @@ public class UnitasConfiguration {
             } else {
 
                 String path = null;
-                path = System.getenv(UNITAS_HOME);
+                path = getUnitasHomeDir();
                 if (path == null) {
                     path = System.getProperty("user.home", System.getenv("HOME"));
                 } else {

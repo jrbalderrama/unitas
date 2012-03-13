@@ -18,10 +18,6 @@
             <groupId>fr.cnrs.i3s</groupId>
             <artifactId>grool-common</artifactId>
         </dependency>
-        <dependency>                
-                <groupId>fr.cnrs.i3s</groupId>
-                <artifactId>jgasw-core</artifactId>
-            </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>

@@ -22,7 +22,7 @@ public interface Broker {
      * @param path base directory of the execution results (on local execution
      * context it is the place of the execution)
      * and the stdout and stderr are contained after execution
-     * @throws jigsaw.exception.JigsawException
+     * @throws unitas.exception.UnitasException
      */
     public void submit(String command, URI location, URI path)
             throws
