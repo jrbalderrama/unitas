@@ -55,12 +55,12 @@ public class ProxyManager {
     }
 
     /**
-     * Add a user proxy to the proxy map for the later uses
+     * Add a user proxy to the proxy map for later uses
      *
      * @param userCredentials user credentials
      * @param userProxy user proxy corresponding to this credential
      */
-    public void addUserProxy(GridUserCredentials userCredentials, Proxy userProxy) {
+    public synchronized void addUserProxy(GridUserCredentials userCredentials, Proxy userProxy) {
 
         proxyMap.put(userCredentials, userProxy);
     }

@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import org.apache.log4j.Logger;
 import unitas.configuration.Constants;
 import unitas.generator.jdl.JDLGenerator;
+import unitas.generator.script.ScriptGenerator;
 
 /**
  * DCIExecutor is used in case of computing infrastructure is an distributed
@@ -33,7 +34,9 @@ public abstract class DCIExecutor extends Executor {
     }
 
     public DCIExecutor(boolean useJobName) {
+        // init Executor class with asynchronous flag
         super(true);
+        
         this.useJobName = useJobName;
         // generate execution script file
         generateScriptFile();
@@ -69,7 +72,7 @@ public abstract class DCIExecutor extends Executor {
      */
     private void generateScriptFile() {
 
-        StringBuilder script = new StringBuilder();
+        String script = ScriptGenerator.getInstance().generateScript(this.context, this.implementationContainer, this.applicationContainer);
 
         scriptName = this.applicationName.replace(" ", "-");
         scriptName += "-" + System.nanoTime() + ".sh";

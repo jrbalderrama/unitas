@@ -15,10 +15,12 @@ import unitas.util.io.FileType;
  * @author javier
  */
 public class ApplicationContainer {
-
+    
+    // application parameters
     private List<String> parameters;
+    // application inputs
     private Map<URI, FileType> sources;
-    //TODO: Replace Argument by Object
+    // application outputs 
     private Map<Object, Object> sinks;
 
     public ApplicationContainer() {
